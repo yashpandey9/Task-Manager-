@@ -1,0 +1,13 @@
+body{
+    background-image: url("/public/assets/background_img3.jpg");
+}
+
+h1{
+    text-align: center;
+    color: whitesmoke;
+}
+
+.footer{
+    color: whitesmoke;
+    text-align: center;
+}
