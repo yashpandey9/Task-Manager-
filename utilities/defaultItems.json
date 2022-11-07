@@ -1,0 +1,6 @@
+[
+    {"name": "Welcom to your to do list!"},
+    {"name": "Hit + to add a new task."},
+    {"name": "<== Hit this to delete a task."},
+    {"name": "Hit this to edit a task. ==>"}
+]

@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const date = require('./date');
 const connectionDB = require('./database/connection');
+const routes = require('./routes/router');
 
 //connecting mongoDB 
 connectionDB();
@@ -17,10 +18,8 @@ app.set('view engine', 'ejs');
 // app.use("/route", express.static("foldername"));
 app.use('/public', express.static('public'));
 
-app.get("/", (req,res) => {
-    const today = date.getDate();
-    res.render("list", {listTitle: today});
-});
+//routing
+app.use(routes);
 
 app.listen(3000, function(){
     console.log("Server is running on port 3000.");
