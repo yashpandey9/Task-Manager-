@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
 const date = require('./date');
+const connectionDB = require('./database/connection');
+
+//connecting mongoDB 
+connectionDB();
 
 //parsing 
 app.use(express.urlencoded({extended: true}));
@@ -15,7 +19,7 @@ app.use('/public', express.static('public'));
 
 app.get("/", (req,res) => {
     const today = date.getDate();
-    res.render("list", {Day: today});
+    res.render("list", {listTitle: today});
 });
 
 app.listen(3000, function(){
