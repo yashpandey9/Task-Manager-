@@ -5,11 +5,14 @@ const List = require('../model/lists');
 const create = async(req, res) =>{
     const itemName = req.body.newItem;
     const listName = req.body.list;
-    const day = await date.getDate();
-    const item = new Item({
-        name: itemName
-    });
     try{
+        if(!itemName){
+            return res.redirect("/");
+        }
+        const day = await date.getDate();
+        const item = new Item({
+            name: itemName
+        });    
         if(listName===day){
             item.save();
             res.redirect("/");
