@@ -25,14 +25,10 @@ mongoose.connection.on('disconnected', () => {
 })
 
 //printing the process id 
-let port = process.env.PORT;
-if(port == null || port == ""){
-    port = 3010;
-}
-const server = app.listen(port, () => {
+const server = app.listen(process.env.PORT || 3010, () => {
     console.log(process.pid);
     console.log(`on process id: ${process.pid}`);
-})
+});
 
 //gracefully shutting down the server
 //it is executed when ctrl c is pressed
