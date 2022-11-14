@@ -1,6 +1,6 @@
 const Item = require("../model/items");
 const defaultItems = require("../utilities/defaultItems.json")
-const date = require("../date");
+const date = require("../utilities/date");
 
 const home = async(req, res) => {
     const foundItems = await Item.find({});

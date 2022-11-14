@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
-const connectionDB = require('./database/connection');
-const routes = require('./routes/router');
+const connectionDB = require('./server/database/connection');
+const routes = require('./server/routes/router');
 const mongoose = require('mongoose');
 
 //connecting mongoDB 
@@ -25,7 +25,11 @@ mongoose.connection.on('disconnected', () => {
 })
 
 //printing the process id 
-const server = app.listen(3010, () => {
+let port = process.env.PORT;
+if(port == null || port == ""){
+    port = 3010;
+}
+const server = app.listen(port, () => {
     console.log(process.pid);
     console.log(`on process id: ${process.pid}`);
 })

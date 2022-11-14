@@ -1,4 +1,4 @@
-const date = require('../date');
+const date = require('../utilities/date');
 const Item = require('../model/items');
 const List = require('../model/lists');
 

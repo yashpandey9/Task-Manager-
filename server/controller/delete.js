@@ -1,5 +1,5 @@
 const Item = require("../model/items");
-const date = require("../date");
+const date = require("../utilities/date");
 
 const Delete = async(req, res) => {
     const itemID = req.body.checkbox;
